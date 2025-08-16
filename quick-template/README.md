@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Arquitectura del Proyecto
 
-## Getting Started
+## Estructura de Carpetas
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+quick-template/
+│
+├── public/
+│   └── assets/
+│       └── images/
+│
+├── src/
+│   ├── app/
+│   ├── components/
+│   │   ├── Header/
+│   │   └── Footer/
+│   ├── hooks/
+│   ├── styles/
+│   ├── utils/
+│   ├── interfaces/
+│   └── services/
+│
+├── package.json
+├── tsconfig.json
+├── next.config.ts
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Explicación de Carpetas y Archivos
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **public/assets/images/**  
+	Almacena imágenes y recursos estáticos accesibles desde el navegador.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **src/app/**  
+	Contiene las páginas principales de la aplicación y el layout general. Aquí Next.js gestiona el enrutamiento y la estructura base.
 
-## Learn More
+- **src/components/**  
+	Componentes reutilizables de la interfaz.  
+	- **Header/**: Encabezado principal del sitio.  
+	- **Footer/**: Pie de página.
 
-To learn more about Next.js, take a look at the following resources:
+- **src/hooks/**  
+	Hooks personalizados de React para lógica reutilizable (ej: manejo de estado, efectos, etc).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **src/styles/**  
+	Hojas de estilos globales y utilitarias. Aquí se definen variables CSS, paletas de colores y estilos compartidos.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **src/utils/**  
+	Funciones utilitarias y helpers que pueden ser usadas en cualquier parte del proyecto.
 
-## Deploy on Vercel
+- **src/interfaces/**  
+	Definición de interfaces y tipos TypeScript para tipar datos y props de componentes.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **src/services/**  
+	Servicios para la lógica de negocio y comunicación con APIs externas (ej: peticiones HTTP).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **package.json**  
+	Archivo de configuración de dependencias, scripts y metadatos del proyecto.
+
+- **tsconfig.json**  
+	Archivo de configuración de TypeScript. Define reglas de compilación, paths, tipos y opciones estrictas para el proyecto.
+
+- **next.config.ts**  
+	Configuración personalizada de Next.js. Permite modificar rutas, dominios de imágenes, optimizaciones, y activar características experimentales.
+
+- **eslint.config.mjs**  
+	Configuración de ESLint para mantener la calidad y consistencia del código. Permite definir reglas y estilos de codificación.
+
+- **postcss.config.mjs**  
+	Configuración de PostCSS, utilizada para procesar los estilos CSS y aplicar plugins como TailwindCSS y Autoprefixer.
+
+- **README.md**  
+	Documentación principal del proyecto: instrucciones de uso, instalación y estructura.
+
+
+Esta arquitectura te permite escalar el proyecto fácilmente, mantener el código organizado y facilitar la colaboración entre desarrolladores.
