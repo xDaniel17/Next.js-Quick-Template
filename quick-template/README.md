@@ -1,76 +1,90 @@
 # Arquitectura del Proyecto
 
-## Estructura de Carpetas
+## Características
 
-```
+- Arquitectura modular y escalable
+- Navegación optimizada y rutas limpias
+- Integración completa con Tailwind CSS v4
+- Modo claro/oscuro automático
+- Paleta de colores personalizada
+- Componentes reutilizables
+- Separación de interfaces/modelos y servicios
+- Documentación clara y visual
+
+---
+
+## Estructura del Proyecto
+
+```bash
 quick-template/
-│
-├── public/
-│   └── assets/
-│       └── images/
-│
+├── public/                # Recursos estáticos (imágenes, íconos)
 ├── src/
-│   ├── app/
-│   ├── components/
-│   │   ├── Header/
-│   │   └── Footer/
-│   ├── hooks/
-│   ├── styles/
-│   ├── utils/
-│   ├── interfaces/
-│   └── services/
-│
-├── package.json
-├── tsconfig.json
-├── next.config.ts
-└── README.md
+│   ├── app/               # Rutas y layout principal
+│   │   ├── about/         # Página About (about/page.tsx)
+│   │   ├── contact/       # Página Contact (contact/page.tsx)
+│   │   ├── home/          # Página Home (home/page.tsx)
+│   │   ├── layout.tsx     # Layout global
+│   │   ├── page.tsx       # Redirección inicial
+│   │   └── globals.css    # Estilos globales
+│   ├── components/        # Componentes reutilizables (Header, Footer)
+│   ├── styles/            # Estilos específicos por página
+│   ├── hooks/             # Custom hooks
+│   ├── interfaces/        # Tipos y modelos TypeScript
+│   └── services/          # Lógica de negocio y API
+├── tailwind.config.js     # Configuración Tailwind
+├── tsconfig.json          # Configuración TypeScript
+├── package.json           # Dependencias y scripts
+└── README.md              # Documentación
 ```
 
-## Explicación de Carpetas y Archivos
+---
 
-- **public/assets/images/**  
-	Almacena imágenes y recursos estáticos accesibles desde el navegador.
+## Instalación
 
-- **src/app/**  
-	Contiene las páginas principales de la aplicación y el layout general. Aquí Next.js gestiona el enrutamiento y la estructura base.
+1. Clona el repositorio:
+	```bash
+	git clone https://github.com/xDaniel17/Next.js-Quick-Template.git
+	```
+2. Instala dependencias:
+	```bash
+	cd quick-template
+	npm install
+	```
+3. Inicia el servidor de desarrollo:
+	```bash
+	npm run dev
+	```
 
-- **src/components/**  
-	Componentes reutilizables de la interfaz.  
-	- **Header/**: Encabezado principal del sitio.  
-	- **Footer/**: Pie de página.
+---
 
-- **src/hooks/**  
-	Hooks personalizados de React para lógica reutilizable (ej: manejo de estado, efectos, etc).
-
-- **src/styles/**  
-	Hojas de estilos globales y utilitarias. Aquí se definen variables CSS, paletas de colores y estilos compartidos.
-
-- **src/utils/**  
-	Funciones utilitarias y helpers que pueden ser usadas en cualquier parte del proyecto.
-
-- **src/interfaces/**  
-	Definición de interfaces y tipos TypeScript para tipar datos y props de componentes.
-
-- **src/services/**  
-	Servicios para la lógica de negocio y comunicación con APIs externas (ej: peticiones HTTP).
-
-- **package.json**  
-	Archivo de configuración de dependencias, scripts y metadatos del proyecto.
-
-- **tsconfig.json**  
-	Archivo de configuración de TypeScript. Define reglas de compilación, paths, tipos y opciones estrictas para el proyecto.
-
-- **next.config.ts**  
-	Configuración personalizada de Next.js. Permite modificar rutas, dominios de imágenes, optimizaciones, y activar características experimentales.
-
-- **eslint.config.mjs**  
-	Configuración de ESLint para mantener la calidad y consistencia del código. Permite definir reglas y estilos de codificación.
-
-- **postcss.config.mjs**  
-	Configuración de PostCSS, utilizada para procesar los estilos CSS y aplicar plugins como TailwindCSS y Autoprefixer.
-
-- **README.md**  
-	Documentación principal del proyecto: instrucciones de uso, instalación y estructura.
+## Uso Rápido
 
 
-Esta arquitectura te permite escalar el proyecto fácilmente, mantener el código organizado y facilitar la colaboración entre desarrolladores.
+- Accede a `/home`, `/about`, `/contact` para ver las páginas de ejemplo.
+- Modifica o agrega rutas en `src/app/[route]/page.tsx` (por ejemplo, `src/app/about/page.tsx`).
+- Personaliza la paleta de colores en `tailwind.config.js`.
+- Agrega componentes en `src/components/`.
+- Define interfaces en `src/interfaces/` y servicios en `src/services/`.
+
+---
+
+## Tecnologías
+
+- Next.js 14+ (App Router)
+- TypeScript
+- Tailwind CSS v4
+
+---
+
+## Buenas Prácticas
+
+- Mantén la arquitectura modular y separa responsabilidades.
+- Usa componentes reutilizables y hooks personalizados.
+- Documenta interfaces y servicios para facilitar el mantenimiento.
+- Elimina archivos y dependencias innecesarias.
+
+---
+
+## Autor
+
+Creado por Daniel. Basado en mejores prácticas de Next.js y Tailwind CSS.
