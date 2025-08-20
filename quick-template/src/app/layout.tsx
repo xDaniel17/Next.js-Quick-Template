@@ -27,9 +27,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <div className="layout-grid">
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
